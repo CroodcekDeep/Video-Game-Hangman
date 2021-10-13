@@ -1,0 +1,28 @@
+# Project: Beta 1.6
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "Beta\ 1.6.o"
+LINKOBJ  = "Beta 1.6.o"
+LIBS     = -L"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/lib" -L"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -lwinmm
+INCS     = -I"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/include" -I"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/include" -I"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Destino Programas/Programación/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Beta 1.6.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"Beta\ 1.6.o": Beta\ 1.6.cpp
+	$(CPP) -c "Beta 1.6.cpp" -o "Beta 1.6.o" $(CXXFLAGS)
